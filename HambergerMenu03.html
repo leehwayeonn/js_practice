@@ -61,38 +61,26 @@
   <script>
     const hambergerBtn = document.querySelector('#hambergerBtn');
     const wrap = document.querySelector('#wrap');
-   
-  //  let animate =  animateHandleOne(0,17,1);
-    let i = 0;
-    let count =18;
-    wrap.addEventListener('click', function(){
-      let timer = setInterval(function(){
-        if(i<18){
-          wrap.style.left =-(i) +"vw"
-          i= i+0.1;
-          hambergerBtn.style.borderColor = "blue";
-          console.log(i);
-        } else{
-          hambergerBtn.style.borderColor = "orange";
-          i=18;
-        }
-        
-      },16);
-      console.log(i);
-    });
-
-    wrap.addEventListener('click',function(){
-      let timer = setInterval(function(){
-      if(hambergerBtn.style.borderColor === "orange") {
-        wrap.style.left = -(count) +"vw";
-          hambergerBtn.style.borderColor = "blue";
-
-        count = count - 0.1;
+  
+    hambergerBtn.addEventListener("click", function(e){
+      console.dir(e);
+      // console.log(e.clientX);
+      // console.dir(e.clientX);
+      // wrap.style.transform = 'translate(' +e.clientX + 'px,' + e.clientY + 'px)';
+      // console.log(wrap.style);
+      let i =0;
+      let timer = setInterval(function(){ 
+        if(hambergerBtn.style.borderColor === "red"){
+          wrap.style.left = -(i)+"vw";
+          i = i + 0.1;
         } 
+        if(i=18) {
+          clearInterval();
+        }
       },16);
     });
+
     
-    // 이렇게하면 left값이 0이되었다가 자동으로 다시 원상태로 돌아오고 심지어 제자리에서 멈추지도 않음.
 
 
 
