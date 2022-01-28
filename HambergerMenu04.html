@@ -28,7 +28,8 @@
       width: 3rem;
       height:3rem;
 
-      border: 1px solid red;
+      border: 1px solid blue;
+      
 
       float:right;
 
@@ -65,48 +66,16 @@
     const hambergerBtnOpen = document.querySelector('#hambergerBtnOpen');
     const hambergerBtnClose = document.querySelector('#hambergerBtnClose');
     const wrap = document.querySelector('#wrap');
-  //  let animate =  animateHandleOne(0,17,1);
+  
 
-  let i = 0;
-  let count =+(i**2-324);
-  console.log(hambergerBtnClose);
-  hambergerBtnClose.addEventListener('click', function(){
-      let timer = setInterval(function(){
-        if(i>count){
-          wrap.style.left =-(i) +"vw"
-          i= i+0.1;
-          count =+(i**2-324)+150;
-        } else {
-            clearInterval(timer);
-            // count = -(i**-324)
-            // i=i-0.1;
-        }       
-      },16);
+    hambergerBtnClose.addEventListener('click',()=> {
+      wrap.scrollTo({
+        left: offsetWidth,
+        behavior : "smooth"
+      });
     });
 
-    hambergerBtnOpen.addEventListener('click',function(){
-      let timer02 = setInterval(function(){
-      if(i<count) {
-        console.log(i);
-        console.log(count);
-        wrap.style.left = -(i) +"vw";
-        i = i-0.1;
-        count = 100-(i**-324);
-        console.log(count);
-
-        } else {
-            clearInterval(timer02);
-          }
-        
-      },16);
-    });
-    
-   // 이렇게 하면 초기 상태와 완전히 동일하진 않지만
-   // 어느정도 위치 이동이 가능하긴함....
-
-
-
-    
+    // 이거 적용 안됨
    
   </script>
 </body>
