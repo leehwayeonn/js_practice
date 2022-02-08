@@ -78,29 +78,29 @@
         if(value===true) {
           count--;
           console.log(count);
-          wrap.style.marginLeft = count +'px';
+          wrap.style.marginLeft = count +'vw';
         } 
-        if(count===-100) {
+        if(count===-20) {
           console.log(value);
           clearInterval(timer);
           value = false;
-          hambergerBtn.defaultValue = 'left';
+          hambergerBtn.defaultValue = 'right';
         }
         if(value===false) {
           count++;
-          wrap.style.marginLeft = count +'px';
+          wrap.style.marginLeft = count +'vw';
         }
         if(count===0) {
           console.log(count);
           clearInterval(timer);
-          hambergerBtn.defaultValue = 'right';
+          hambergerBtn.defaultValue = 'left';
           value=true;
         }
-      },16);
+      },40);
     });
 
 
-    // 이거 적용 안됨
+    
    
   </script>
 </body>
